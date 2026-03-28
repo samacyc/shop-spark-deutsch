@@ -6,8 +6,8 @@ import Footer from "@/components/store/Footer";
 import { CheckCircle, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
-const UNIT_PRICE = 39.99;
-const PRODUCT_NAME = "Turn2Me™ 3-in-1 Drehbarer Kindersitz";
+const UNIT_PRICE = 9.95;
+const PRODUCT_NAME = "Weighted Cow Plush";
 
 declare global {
   interface Window {
@@ -36,7 +36,6 @@ const Checkout = () => {
   const [processing, setProcessing] = useState(false);
   const [formValid, setFormValid] = useState(false);
 
-  // Validate form
   useEffect(() => {
     const valid =
       name.trim().length > 0 &&
@@ -48,7 +47,6 @@ const Checkout = () => {
     setFormValid(valid);
   }, [name, email, addressLine1, city, postalCode]);
 
-  // Load PayPal client ID from backend
   useEffect(() => {
     const loadClientId = async () => {
       try {
@@ -67,17 +65,15 @@ const Checkout = () => {
     loadClientId();
   }, []);
 
-  // Load PayPal JS SDK
   useEffect(() => {
     if (!paypalClientId) return;
 
-    // Remove old script if exists
     const existingScript = document.getElementById("paypal-sdk");
     if (existingScript) existingScript.remove();
 
     const script = document.createElement("script");
     script.id = "paypal-sdk";
-    script.src = `https://www.paypal.com/sdk/js?client-id=${paypalClientId}&currency=EUR&intent=tokenize&vault=true`;
+    script.src = `https://www.paypal.com/sdk/js?client-id=${paypalClientId}&currency=USD&intent=tokenize&vault=true`;
     script.async = true;
     script.onload = () => setPaypalReady(true);
     document.head.appendChild(script);
@@ -88,26 +84,23 @@ const Checkout = () => {
     };
   }, [paypalClientId]);
 
-  // Render PayPal button
   const paypalContainerRef = useCallback(
     (node: HTMLDivElement | null) => {
       if (!node || !paypalReady || !window.paypal) return;
-
-      // Clear previous buttons
       node.innerHTML = "";
 
       window.paypal
         .Buttons({
           style: {
             layout: "vertical",
-            color: "blue",
-            shape: "rect",
+            color: "gold",
+            shape: "pill",
             label: "pay",
             height: 45,
           },
           createBillingAgreement: async () => {
             if (!formValid) {
-              setError("Bitte füllen Sie alle Pflichtfelder aus.");
+              setError("Please fill in all required fields.");
               throw new Error("Form invalid");
             }
             setError("");
@@ -138,7 +131,7 @@ const Checkout = () => {
               return data.tokenId;
             } catch (err: any) {
               setProcessing(false);
-              setError(err.message || "Fehler bei der Zahlungsverarbeitung.");
+              setError(err.message || "Error processing payment.");
               throw err;
             }
           },
@@ -169,7 +162,7 @@ const Checkout = () => {
               setSuccess(true);
             } catch (err: any) {
               setProcessing(false);
-              setError(err.message || "Fehler beim Abschließen der Zahlung.");
+              setError(err.message || "Error completing payment.");
             }
           },
           onCancel: () => {
@@ -179,7 +172,7 @@ const Checkout = () => {
           onError: (err: any) => {
             setProcessing(false);
             console.error("PayPal error:", err);
-            setError("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.");
+            setError("An error occurred. Please try again.");
           },
         })
         .render(node);
@@ -196,10 +189,10 @@ const Checkout = () => {
           <div className="text-center max-w-md mx-auto px-4">
             <CheckCircle className="w-16 h-16 text-primary mx-auto mb-4" />
             <h1 className="text-2xl font-extrabold text-foreground mb-2">
-              Vielen Dank für Ihre Bestellung!
+              Thank you for your order!
             </h1>
             <p className="text-muted-foreground">
-              Bestätigungsmail an <strong className="text-foreground">{email}</strong>.
+              Confirmation email sent to <strong className="text-foreground">{email}</strong>.
             </p>
           </div>
         </main>
@@ -218,119 +211,117 @@ const Checkout = () => {
       <main className="flex-1 py-12 md:py-20">
         <div className="container max-w-lg">
           <h1 className="text-2xl md:text-3xl font-extrabold text-foreground text-center mb-8">
-            Bestellung abschließen
+            Complete Your Order
           </h1>
 
-          {/* Order summary */}
           <div className="bg-background border rounded-xl p-6 mb-6">
             <div className="flex justify-between items-center pb-4 border-b mb-4">
               <div>
                 <p className="font-bold text-foreground">{PRODUCT_NAME}</p>
                 <p className="text-sm text-muted-foreground">
-                  {quantity} × €{UNIT_PRICE.toFixed(2)} · Kostenloser Versand
+                  {quantity} × ${UNIT_PRICE.toFixed(2)} · Free Shipping
                 </p>
               </div>
-              <p className="text-xl font-extrabold text-foreground">€{totalPrice.toFixed(2)}</p>
+              <p className="text-xl font-extrabold text-foreground">${totalPrice.toFixed(2)}</p>
             </div>
             <div className="flex justify-between text-sm mb-1">
-              <span className="text-muted-foreground">Zwischensumme</span>
-              <span className="text-foreground">€{totalPrice.toFixed(2)}</span>
+              <span className="text-muted-foreground">Subtotal</span>
+              <span className="text-foreground">${totalPrice.toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-sm mb-1">
-              <span className="text-muted-foreground">Versand</span>
-              <span className="text-primary font-semibold">Kostenlos</span>
+              <span className="text-muted-foreground">Shipping</span>
+              <span className="text-primary font-semibold">Free</span>
             </div>
             <div className="flex justify-between font-bold text-foreground pt-3 border-t mt-3">
-              <span>Gesamt</span>
-              <span>€{totalPrice.toFixed(2)}</span>
+              <span>Total</span>
+              <span>${totalPrice.toFixed(2)}</span>
             </div>
           </div>
 
-          {/* Customer info form */}
           <div className="bg-background border rounded-xl p-6 space-y-4">
             <div>
               <label className="block text-sm font-semibold text-foreground mb-1.5">
-                Vollständiger Name *
+                Full Name *
               </label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Max Mustermann"
+                placeholder="Jane Doe"
                 className={inputCls}
                 disabled={processing}
               />
             </div>
             <div>
               <label className="block text-sm font-semibold text-foreground mb-1.5">
-                E-Mail-Adresse *
+                Email Address *
               </label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="max@beispiel.de"
+                placeholder="jane@example.com"
                 className={inputCls}
                 disabled={processing}
               />
             </div>
             <hr className="border-border" />
-            <p className="text-sm font-semibold text-foreground">Lieferadresse</p>
+            <p className="text-sm font-semibold text-foreground">Shipping Address</p>
             <div>
               <label className="block text-sm font-semibold text-foreground mb-1.5">
-                Straße und Hausnummer *
+                Street Address *
               </label>
               <input
                 type="text"
                 value={addressLine1}
                 onChange={(e) => setAddressLine1(e.target.value)}
-                placeholder="Musterstraße 1"
+                placeholder="123 Main Street"
                 className={inputCls}
                 disabled={processing}
               />
             </div>
             <div>
               <label className="block text-sm font-semibold text-foreground mb-1.5">
-                Adresszusatz
+                Apt / Suite
               </label>
               <input
                 type="text"
                 value={addressLine2}
                 onChange={(e) => setAddressLine2(e.target.value)}
-                placeholder="Wohnung, Etage (optional)"
+                placeholder="Apartment, suite (optional)"
                 className={inputCls}
                 disabled={processing}
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-1.5">PLZ *</label>
+                <label className="block text-sm font-semibold text-foreground mb-1.5">Zip Code *</label>
                 <input
                   type="text"
                   value={postalCode}
                   onChange={(e) => setPostalCode(e.target.value)}
-                  placeholder="10115"
+                  placeholder="10001"
                   className={inputCls}
                   disabled={processing}
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-1.5">Stadt *</label>
+                <label className="block text-sm font-semibold text-foreground mb-1.5">City *</label>
                 <input
                   type="text"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  placeholder="Berlin"
+                  placeholder="New York"
                   className={inputCls}
                   disabled={processing}
                 />
               </div>
             </div>
             <div>
-              <label className="block text-sm font-semibold text-foreground mb-1.5">Land</label>
+              <label className="block text-sm font-semibold text-foreground mb-1.5">Country</label>
               <input
                 type="text"
-                value="Deutschland"
+                value="United States"
                 disabled
                 className="w-full border rounded-lg px-4 py-3 text-sm bg-muted text-muted-foreground cursor-not-allowed"
               />
@@ -338,11 +329,10 @@ const Checkout = () => {
 
             {error && <p className="text-sm text-destructive font-medium">{error}</p>}
 
-            {/* PayPal Button */}
             {processing && (
               <div className="flex items-center justify-center py-4 gap-2 text-muted-foreground">
                 <Loader2 className="w-5 h-5 animate-spin" />
-                <span className="text-sm">Zahlung wird verarbeitet...</span>
+                <span className="text-sm">Processing payment...</span>
               </div>
             )}
 
@@ -354,12 +344,12 @@ const Checkout = () => {
             ) : (
               <div className="text-center py-4">
                 <Loader2 className="w-5 h-5 animate-spin mx-auto mb-2 text-muted-foreground" />
-                <p className="text-xs text-muted-foreground">Zahlungsmethode wird geladen...</p>
+                <p className="text-xs text-muted-foreground">Loading payment method...</p>
               </div>
             )}
 
             <p className="text-xs text-muted-foreground text-center">
-              🔒 Sichere Zahlung · Ihre Daten werden verschlüsselt übertragen
+              🔒 Secure payment · Your data is encrypted
             </p>
           </div>
         </div>

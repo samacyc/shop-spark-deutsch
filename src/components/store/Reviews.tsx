@@ -1,47 +1,42 @@
 const reviews = [
-  { name: "Laura S.", rating: 5, text: "Die Drehfunktion ist ein Gamechanger! Kein Verrenken mehr beim Anschnallen. Unser Baby sitzt sicher und bequem. Absolut empfehlenswert!", time: "vor 2 Wochen", verified: true },
-  { name: "Michael K.", rating: 5, text: "Einbau hat keine 2 Minuten gedauert dank SnugLock. Der Sitz fühlt sich massiv und sicher an. Preis-Leistung ist top.", time: "vor 1 Monat", verified: true },
-  { name: "Sandra W.", rating: 5, text: "Wir hatten vorher einen normalen Sitz — der Unterschied mit der Drehung ist riesig. Baby lacht jedes Mal wenn sich der Sitz dreht!", time: "vor 2 Monaten", verified: true },
-  { name: "Thomas H.", rating: 4, text: "Sehr solider Kindersitz. Die 3 Modi sind praktisch. Einziger Nachteil: Er ist etwas schwer, aber dafür fühlt man die Qualität.", time: "vor 3 Monaten", verified: true },
-  { name: "Julia M.", rating: 5, text: "Haben den Sitz für unser zweites Kind gekauft, nachdem wir ihn bei Freunden gesehen haben. Die Polsterung ist super weich und der Einbau kinderleicht.", time: "vor 3 Monaten", verified: true },
-  { name: "Markus B.", rating: 5, text: "Perfekt für lange Autofahrten. Unser Sohn (2 Jahre) schläft sofort ein. Die Kopfstütze lässt sich super anpassen.", time: "vor 4 Monaten", verified: true },
-  { name: "Anna R.", rating: 4, text: "Toller Sitz! Die 10-fach verstellbare Kopfstütze ist genial. Etwas teurer als andere, aber die Sicherheit ist es wert.", time: "vor 5 Monaten", verified: true },
-  { name: "Stefan L.", rating: 5, text: "Haben den Sitz sogar im Flugzeug genutzt — funktioniert einwandfrei. Endlich ein Sitz der alles kann!", time: "vor 6 Monaten", verified: true },
+  { name: "Renee W.", rating: 5, text: "I absolutely love him! I bought him to help with my anxiety and he is the perfect weight and soft as can be. Best purchase I've made in a long time!", time: "2 weeks ago", verified: true },
+  { name: "Mariah T.", rating: 5, text: "Omg this is my new favorite stuffed animal. The fur is softer than ANY plush I've ever owned, you need to feel it in person. Love that it's weighted too!", time: "1 month ago", verified: true },
+  { name: "Audrey K.", rating: 5, text: "I wasn't expecting much, but it's like a cloud pillow! Like a cow-shaped marshmallow! It's so soft and squishy! I'm tempted to buy another one for myself!", time: "2 months ago", verified: true },
+  { name: "Andrea S.", rating: 5, text: "I absolutely love this highland cow! It is adorable, soft, perfect size to cuddle and the color is exquisite. Its eyes are so expressive. It microwaves easily when you want something warm to cuddle!", time: "3 months ago", verified: true },
 ];
 
 const ratingDistribution = [
-  { stars: 5, count: 876 },
-  { stars: 4, count: 171 },
-  { stars: 3, count: 57 },
-  { stars: 2, count: 23 },
-  { stars: 1, count: 15 },
+  { stars: 5, count: 4 },
+  { stars: 4, count: 0 },
+  { stars: 3, count: 0 },
+  { stars: 2, count: 0 },
+  { stars: 1, count: 0 },
 ];
 
-const totalReviews = 1142;
-const avgRating = 4.6;
+const totalReviews = 4;
+const avgRating = 5.0;
 
 const Reviews = () => {
   return (
     <section className="py-16">
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-2 text-foreground">
-          Kundenbewertungen
+          Customer Reviews
         </h2>
         <div className="flex flex-col items-center mb-10">
           <div className="flex items-center gap-2 mb-2">
             <div className="flex text-highlight text-lg">
-              {"★★★★".split("").map((_, i) => <span key={i}>★</span>)}
-              <span className="text-highlight/60">★</span>
+              {"★★★★★".split("").map((_, i) => <span key={i}>★</span>)}
             </div>
             <span className="text-foreground font-bold">{avgRating}</span>
-            <span className="text-muted-foreground text-sm">({totalReviews.toLocaleString("de-DE")} Bewertungen)</span>
+            <span className="text-muted-foreground text-sm">({totalReviews} reviews)</span>
           </div>
           <div className="w-full max-w-xs space-y-1">
             {ratingDistribution.map((r) => (
               <div key={r.stars} className="flex items-center gap-2 text-sm">
                 <span className="w-4 text-muted-foreground text-right">{r.stars}</span>
                 <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
-                  <div className="h-full bg-highlight rounded-full" style={{ width: `${(r.count / totalReviews) * 100}%` }} />
+                  <div className="h-full bg-highlight rounded-full" style={{ width: `${totalReviews > 0 ? (r.count / totalReviews) * 100 : 0}%` }} />
                 </div>
                 <span className="w-8 text-muted-foreground text-right">{r.count}</span>
               </div>
@@ -54,7 +49,7 @@ const Reviews = () => {
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-foreground text-sm">{r.name}</span>
-                  {r.verified && <span className="text-xs text-primary font-medium flex items-center gap-1">✓ Verifiziert</span>}
+                  {r.verified && <span className="text-xs text-primary font-medium flex items-center gap-1">✓ Verified</span>}
                 </div>
                 <span className="text-xs text-muted-foreground">{r.time}</span>
               </div>

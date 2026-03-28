@@ -2,23 +2,23 @@ const steps = [
   {
     icon: "📦",
     num: "1",
-    title: "Auspacken & Einbauen",
-    desc: "Dank SnugLock® Technologie ist der Kindersitz in unter einer Minute sicher eingebaut — per Gurt oder LATCH.",
-    tags: ["SnugLock®", "InRight™ LATCH"],
+    title: "Unbox Your Plush",
+    desc: "Your weighted cow plush arrives carefully packaged. Unbox and give it a gentle fluff — it's ready to cuddle!",
+    tags: ["Premium Packaging", "Ready to Love"],
   },
   {
-    icon: "🔄",
+    icon: "🤗",
     num: "2",
-    title: "Drehen & Anschnallen",
-    desc: "Drehen Sie den Sitz mit einer Hand zu sich — Baby einfach einsetzen, anschnallen und zurückdrehen. Klick!",
-    tags: ["360° Drehung", "Einhändig bedienbar"],
+    title: "Hug & Relax",
+    desc: "Hold your plush close and feel the gentle, comforting weight melt your stress away. Just like a weighted blanket, but cuter.",
+    tags: ["Weighted Comfort", "Anxiety Relief"],
   },
   {
-    icon: "🚗",
+    icon: "🌙",
     num: "3",
-    title: "Sicher losfahren",
-    desc: "ProtectPlus Engineered™ Schutz bei Front-, Seiten-, Heck- und Überschlagkollisionen. Sicherheit auf jedem Weg.",
-    tags: ["ProtectPlus™", "10 Jahre nutzbar"],
+    title: "Sleep Peacefully",
+    desc: "Drift off to sleep with your cozy companion. The soothing weight helps you fall asleep faster and sleep deeper.",
+    tags: ["Better Sleep", "Serotonin Boost"],
   },
 ];
 
@@ -26,18 +26,18 @@ const Steps = () => {
   return (
     <section className="py-16">
       <div className="container">
-        <p className="text-center text-xs font-semibold text-muted-foreground tracking-wider uppercase mb-2">So funktioniert es</p>
+        <p className="text-center text-xs font-semibold text-muted-foreground tracking-wider uppercase mb-2">How It Works</p>
         <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-3 text-foreground">
-          In 3 einfachen Schritten zur sicheren Fahrt
+          3 Simple Steps to Better Sleep
         </h2>
         <p className="text-center text-muted-foreground mb-10 max-w-lg mx-auto">
-          Kein Verdrehen, kein Stress — einfach drehen und losfahren.
+          No pills, no apps — just a cozy, weighted hug.
         </p>
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {steps.map((s) => (
             <div key={s.num} className="text-center bg-secondary rounded-xl p-6 border">
               <div className="text-3xl mb-3">{s.icon}</div>
-              <div className="text-xs text-muted-foreground mb-1">Schritt {s.num}</div>
+              <div className="text-xs text-muted-foreground mb-1">Step {s.num}</div>
               <h3 className="font-bold text-foreground text-lg mb-2">{s.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">{s.desc}</p>
               <div className="flex gap-2 justify-center flex-wrap">

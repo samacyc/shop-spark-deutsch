@@ -6,16 +6,16 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { href: "/", label: "Startseite" },
-    { href: "/kontakt", label: "Kontakt" },
-    { href: "/bestellung-verfolgen", label: "Ihre Bestellung verfolgen" },
+    { href: "/", label: "Home" },
+    { href: "/kontakt", label: "Contact" },
+    { href: "/bestellung-verfolgen", label: "Track Order" },
   ];
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b">
         <div className="container flex items-center justify-between h-14 md:h-16">
-        <Link to="/" className="text-xl md:text-2xl font-extrabold tracking-tight text-foreground italic shrink-0">
-          Cruva
+        <Link to="/" className="text-xl md:text-2xl font-extrabold tracking-tight text-primary shrink-0">
+          rosa 🌸
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
           {navLinks.map((link) => (
@@ -25,13 +25,13 @@ const Header = () => {
           ))}
         </nav>
         <div className="flex items-center gap-4 text-muted-foreground">
-          <button className="hover:text-foreground transition-colors" aria-label="Suche">
+          <button className="hover:text-foreground transition-colors" aria-label="Search">
             <Search className="w-5 h-5" />
           </button>
-          <button className="hover:text-foreground transition-colors" aria-label="Konto">
+          <button className="hover:text-foreground transition-colors" aria-label="Account">
             <User className="w-5 h-5" />
           </button>
-          <button className="md:hidden hover:text-foreground transition-colors" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menü">
+          <button className="md:hidden hover:text-foreground transition-colors" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
