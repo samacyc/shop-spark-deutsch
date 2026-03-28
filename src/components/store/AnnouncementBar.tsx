@@ -1,7 +1,7 @@
 const items = [
-  "KINDERSITZ-AKTION",
-  "73% RABATT",
-  "NUR FÜR KURZE ZEIT!",
+  "SALE ENDS MIDNIGHT! ✨",
+  "67% OFF",
+  "LIMITED TIME ONLY!",
 ];
 
 const AnnouncementBar = () => {

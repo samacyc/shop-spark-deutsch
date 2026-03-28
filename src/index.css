@@ -2,48 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 213 30% 12%;
+    --background: 30 50% 98%;
+    --foreground: 20 20% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 213 30% 12%;
+    --card: 30 50% 98%;
+    --card-foreground: 20 20% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 213 30% 12%;
+    --popover: 30 50% 98%;
+    --popover-foreground: 20 20% 15%;
 
-    --primary: 213 60% 30%;
+    --primary: 345 60% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 213 20% 96%;
-    --secondary-foreground: 213 30% 12%;
+    --secondary: 30 40% 95%;
+    --secondary-foreground: 20 20% 15%;
 
-    --muted: 213 20% 96%;
-    --muted-foreground: 213 12% 46%;
+    --muted: 30 30% 95%;
+    --muted-foreground: 20 10% 45%;
 
-    --accent: 213 50% 94%;
-    --accent-foreground: 213 60% 25%;
+    --accent: 345 40% 94%;
+    --accent-foreground: 345 50% 35%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 213 20% 90%;
-    --input: 213 20% 90%;
-    --ring: 213 60% 30%;
+    --border: 30 25% 88%;
+    --input: 30 25% 88%;
+    --ring: 345 60% 55%;
 
-    --radius: 0.625rem;
+    --radius: 0.75rem;
 
     /* Custom tokens */
     --sale: 0 84% 55%;
     --sale-foreground: 0 0% 100%;
-    --badge-bg: 213 50% 94%;
-    --badge-text: 213 60% 25%;
-    --announcement-bg: 213 30% 12%;
+    --badge-bg: 345 40% 94%;
+    --badge-text: 345 50% 35%;
+    --announcement-bg: 345 60% 55%;
     --announcement-foreground: 0 0% 100%;
-    --section-alt: 213 20% 97%;
+    --section-alt: 30 40% 96%;
     --highlight: 40 95% 55%;
     --stock-green: 142 70% 45%;
     --stock-bar-bg: 142 50% 88%;
@@ -59,25 +59,25 @@
   }
 
   .dark {
-    --background: 213 30% 7%;
-    --foreground: 0 0% 95%;
-    --card: 213 30% 10%;
-    --card-foreground: 0 0% 95%;
-    --popover: 213 30% 10%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 213 60% 50%;
+    --background: 20 20% 7%;
+    --foreground: 30 20% 95%;
+    --card: 20 20% 10%;
+    --card-foreground: 30 20% 95%;
+    --popover: 20 20% 10%;
+    --popover-foreground: 30 20% 95%;
+    --primary: 345 60% 55%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 213 20% 15%;
-    --secondary-foreground: 0 0% 95%;
-    --muted: 213 20% 15%;
-    --muted-foreground: 213 12% 60%;
-    --accent: 213 40% 15%;
-    --accent-foreground: 213 50% 70%;
+    --secondary: 20 15% 15%;
+    --secondary-foreground: 30 20% 95%;
+    --muted: 20 15% 15%;
+    --muted-foreground: 20 10% 60%;
+    --accent: 345 30% 18%;
+    --accent-foreground: 345 40% 70%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 95%;
-    --border: 213 20% 18%;
-    --input: 213 20% 18%;
-    --ring: 213 60% 50%;
+    --border: 20 15% 18%;
+    --input: 20 15% 18%;
+    --ring: 345 60% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -95,11 +95,13 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Nunito', 'Quicksand', sans-serif;
   }
 
   h1, h2, h3, h4 {
     @apply font-bold tracking-tight;
+    font-family: 'Quicksand', 'Nunito', sans-serif;
   }
 }
 
