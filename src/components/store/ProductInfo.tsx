@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Minus, Plus, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const UNIT_PRICE = 1.00;
+const UNIT_PRICE = 9.99;
 const ORIGINAL_PRICE = 29.99;
 
 const features = [
