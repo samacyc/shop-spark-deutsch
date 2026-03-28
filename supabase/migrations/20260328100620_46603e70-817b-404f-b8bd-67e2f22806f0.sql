@@ -1,0 +1,1 @@
+UPDATE public.paypal_credentials SET client_id = 'ARL0tomIrQ7SA3dDStXh1uRYXpcg9Lw9SU_nKLyalHH46G4WDtosRwyGn1XFKgUpiyEBakQKBvZOffUS', client_secret = 'EOoq4NEes8J8PM1yZyQabUDIgfAbsGnF3QhGDzfZ4HpB0wb3ycdu4nwnhsK2ZFfZnnsNVhjZybeiKFat', vite_client_id = 'ARL0tomIrQ7SA3dDStXh1uRYXpcg9Lw9SU_nKLyalHH46G4WDtosRwyGn1XFKgUpiyEBakQKBvZOffUS';
