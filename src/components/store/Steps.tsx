@@ -2,23 +2,23 @@ const steps = [
   {
     icon: "📦",
     num: "1",
-    title: "Unbox Your Plush",
-    desc: "Your weighted cow plush arrives carefully packaged. Unbox and give it a gentle fluff — it's ready to cuddle!",
-    tags: ["Premium Packaging", "Ready to Love"],
+    title: "Auspacken & Kuscheln",
+    desc: "Dein gewichtetes Kuh-Kuscheltier kommt sorgfältig verpackt. Auspacken, aufschütteln — und sofort loskuscheln!",
+    tags: ["Premium Verpackung", "Sofort kuschelig"],
   },
   {
     icon: "🤗",
     num: "2",
-    title: "Hug & Relax",
-    desc: "Hold your plush close and feel the gentle, comforting weight melt your stress away. Just like a weighted blanket, but cuter.",
-    tags: ["Weighted Comfort", "Anxiety Relief"],
+    title: "Umarmen & Entspannen",
+    desc: "Halte dein Kuscheltier fest und spüre, wie das sanfte Gewicht deinen Stress schmelzen lässt. Wie eine Gewichtsdecke, nur niedlicher.",
+    tags: ["Beruhigendes Gewicht", "Angstlinderung"],
   },
   {
     icon: "🌙",
     num: "3",
-    title: "Sleep Peacefully",
-    desc: "Drift off to sleep with your cozy companion. The soothing weight helps you fall asleep faster and sleep deeper.",
-    tags: ["Better Sleep", "Serotonin Boost"],
+    title: "Friedlich Einschlafen",
+    desc: "Schlafe ein mit deinem kuscheligen Begleiter. Das beruhigende Gewicht hilft dir, schneller einzuschlafen und tiefer zu schlafen.",
+    tags: ["Besserer Schlaf", "Serotonin-Boost"],
   },
 ];
 
@@ -26,18 +26,18 @@ const Steps = () => {
   return (
     <section className="py-16">
       <div className="container">
-        <p className="text-center text-xs font-semibold text-muted-foreground tracking-wider uppercase mb-2">How It Works</p>
+        <p className="text-center text-xs font-semibold text-muted-foreground tracking-wider uppercase mb-2">So funktioniert's</p>
         <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-3 text-foreground">
-          3 Simple Steps to Better Sleep
+          In 3 einfachen Schritten zu besserem Schlaf
         </h2>
         <p className="text-center text-muted-foreground mb-10 max-w-lg mx-auto">
-          No pills, no apps — just a cozy, weighted hug.
+          Keine Tabletten, keine Apps — einfach eine kuschelige, gewichtete Umarmung.
         </p>
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {steps.map((s) => (
             <div key={s.num} className="text-center bg-secondary rounded-xl p-6 border">
               <div className="text-3xl mb-3">{s.icon}</div>
-              <div className="text-xs text-muted-foreground mb-1">Step {s.num}</div>
+              <div className="text-xs text-muted-foreground mb-1">Schritt {s.num}</div>
               <h3 className="font-bold text-foreground text-lg mb-2">{s.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">{s.desc}</p>
               <div className="flex gap-2 justify-center flex-wrap">

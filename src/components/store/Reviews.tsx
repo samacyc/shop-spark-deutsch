@@ -1,8 +1,8 @@
 const reviews = [
-  { name: "Renee W.", rating: 5, text: "I absolutely love him! I bought him to help with my anxiety and he is the perfect weight and soft as can be. Best purchase I've made in a long time!", time: "2 weeks ago", verified: true },
-  { name: "Mariah T.", rating: 5, text: "Omg this is my new favorite stuffed animal. The fur is softer than ANY plush I've ever owned, you need to feel it in person. Love that it's weighted too!", time: "1 month ago", verified: true },
-  { name: "Audrey K.", rating: 5, text: "I wasn't expecting much, but it's like a cloud pillow! Like a cow-shaped marshmallow! It's so soft and squishy! I'm tempted to buy another one for myself!", time: "2 months ago", verified: true },
-  { name: "Andrea S.", rating: 5, text: "I absolutely love this highland cow! It is adorable, soft, perfect size to cuddle and the color is exquisite. Its eyes are so expressive. It microwaves easily when you want something warm to cuddle!", time: "3 months ago", verified: true },
+  { name: "Renee W.", rating: 5, text: "Ich liebe ihn! Ich habe ihn gegen meine Angst gekauft und er hat das perfekte Gewicht und ist super weich. Bester Kauf seit langem!", time: "vor 2 Wochen", verified: true },
+  { name: "Mariah T.", rating: 5, text: "Oh mein Gott, das ist mein neues Lieblingskuscheltier. Das Fell ist weicher als JEDES Plüschtier, das ich je besessen habe. Man muss es persönlich fühlen. Und dass es gewichtet ist, liebe ich!", time: "vor 1 Monat", verified: true },
+  { name: "Audrey K.", rating: 5, text: "Ich hatte nicht viel erwartet, aber es ist wie ein Wolkenkissen! Wie ein kuhförmiger Marshmallow! So weich und kuschelig! Ich bin versucht, noch einen für mich zu kaufen!", time: "vor 2 Monaten", verified: true },
+  { name: "Andrea S.", rating: 5, text: "Ich liebe diese Highland-Kuh! Sie ist bezaubernd, weich, perfekte Größe zum Kuscheln und die Farbe ist wunderschön. Die Augen sind so ausdrucksvoll. Man kann sie sogar in der Mikrowelle erwärmen!", time: "vor 3 Monaten", verified: true },
 ];
 
 const ratingDistribution = [
@@ -21,15 +21,15 @@ const Reviews = () => {
     <section className="py-16">
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-2 text-foreground">
-          Customer Reviews
+          Kundenbewertungen
         </h2>
         <div className="flex flex-col items-center mb-10">
           <div className="flex items-center gap-2 mb-2">
             <div className="flex text-highlight text-lg">
               {"★★★★★".split("").map((_, i) => <span key={i}>★</span>)}
             </div>
-            <span className="text-foreground font-bold">{avgRating}</span>
-            <span className="text-muted-foreground text-sm">({totalReviews} reviews)</span>
+            <span className="text-foreground font-bold">{avgRating.toFixed(1).replace(".", ",")}</span>
+            <span className="text-muted-foreground text-sm">({totalReviews} Bewertungen)</span>
           </div>
           <div className="w-full max-w-xs space-y-1">
             {ratingDistribution.map((r) => (
@@ -49,7 +49,7 @@ const Reviews = () => {
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-foreground text-sm">{r.name}</span>
-                  {r.verified && <span className="text-xs text-primary font-medium flex items-center gap-1">✓ Verified</span>}
+                  {r.verified && <span className="text-xs text-primary font-medium flex items-center gap-1">✓ Verifiziert</span>}
                 </div>
                 <span className="text-xs text-muted-foreground">{r.time}</span>
               </div>

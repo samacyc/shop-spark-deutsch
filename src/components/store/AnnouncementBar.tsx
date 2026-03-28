@@ -1,7 +1,7 @@
 const items = [
-  "SALE ENDS MIDNIGHT! ✨",
-  "67% OFF",
-  "LIMITED TIME ONLY!",
+  "AKTION ENDET HEUTE NACHT! ✨",
+  "67% RABATT",
+  "NUR FÜR KURZE ZEIT!",
 ];
 
 const AnnouncementBar = () => {

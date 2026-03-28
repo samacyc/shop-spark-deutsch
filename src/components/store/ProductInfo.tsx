@@ -7,12 +7,12 @@ const UNIT_PRICE = 9.95;
 const ORIGINAL_PRICE = 29.99;
 
 const features = [
-  { icon: "😌", label: "Anxiety Relief" },
-  { icon: "🤗", label: "Comforting Weight" },
-  { icon: "☁️", label: "Ultra Soft & Cozy" },
-  { icon: "🌙", label: "Better Sleep" },
-  { icon: "🎁", label: "Perfect Gift" },
-  { icon: "🧸", label: "Premium Plush" },
+  { icon: "😌", label: "Angstlinderung" },
+  { icon: "🤗", label: "Beruhigendes Gewicht" },
+  { icon: "☁️", label: "Ultra weich & kuschelig" },
+  { icon: "🌙", label: "Besserer Schlaf" },
+  { icon: "🎁", label: "Perfektes Geschenk" },
+  { icon: "🧸", label: "Premium Plüsch" },
 ];
 
 const ProductInfo = () => {
@@ -25,7 +25,7 @@ const ProductInfo = () => {
   return (
     <div className="flex flex-col gap-5">
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground leading-tight">
-        Weighted Cow Plush
+        Gewichtetes Kuh-Kuscheltier
       </h1>
 
       <div className="flex items-center gap-2">
@@ -34,24 +34,24 @@ const ProductInfo = () => {
             <span key={i}>★</span>
           ))}
         </div>
-        <span className="text-sm text-muted-foreground">5.0 (4 reviews)</span>
+        <span className="text-sm text-muted-foreground">5,0 (4 Bewertungen)</span>
       </div>
 
       <div className="flex items-baseline gap-3">
         <span className="text-xl text-muted-foreground line-through">
-          ${ORIGINAL_PRICE.toFixed(2)}
+          €{ORIGINAL_PRICE.toFixed(2).replace(".", ",")}
         </span>
         <span className="text-2xl sm:text-3xl font-extrabold text-foreground">
-          ${UNIT_PRICE.toFixed(2)}
+          €{UNIT_PRICE.toFixed(2).replace(".", ",")}
         </span>
-        <span className="bg-sale text-sale-foreground text-xs font-bold px-2.5 py-1 rounded-full">SAVE $20.04</span>
+        <span className="bg-sale text-sale-foreground text-xs font-bold px-2.5 py-1 rounded-full">SPARE 20,04 €</span>
       </div>
 
       <div className="bg-accent rounded-lg p-4 flex items-center gap-3">
         <div className="w-3 h-3 rounded-full bg-stock-green animate-pulse" />
         <div className="flex-1">
           <p className="text-sm font-semibold text-foreground">
-            Only <strong>9</strong> units remaining — selling fast!
+            Nur noch <strong>9</strong> Stück auf Lager — sehr hohe Nachfrage!
           </p>
           <div className="mt-2 h-2 rounded-full bg-stock-bar overflow-hidden">
             <div className="h-full bg-stock-green rounded-full" style={{ width: "15%" }} />
@@ -73,10 +73,10 @@ const ProductInfo = () => {
       <div className="bg-accent rounded-lg p-4 flex items-start gap-3">
         <span className="text-2xl text-primary">🐮</span>
         <div className="flex-1">
-          <h3 className="font-bold text-foreground">Sleeping without anxiety has never been so easy...</h3>
+          <h3 className="font-bold text-foreground">Angstfrei einschlafen war noch nie so einfach...</h3>
           <p className="text-sm text-muted-foreground mt-1">
-            Our weighted plushies are perfect for sleep and relaxation. They offer a gentle, comforting hug 
-            designed to help you relax — works just like a weighted blanket, just like a hug.
+            Unsere gewichteten Kuscheltiere sind perfekt für Schlaf und Entspannung. Sie bieten eine sanfte, 
+            beruhigende Umarmung — funktioniert wie eine Gewichtsdecke, nur kuscheliger.
           </p>
         </div>
         <span className="bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full whitespace-nowrap">
@@ -89,7 +89,7 @@ const ProductInfo = () => {
           <button
             onClick={() => setQty(Math.max(1, qty - 1))}
             className="px-3 py-2.5 sm:py-3 hover:bg-secondary transition-colors text-muted-foreground"
-            aria-label="Decrease quantity"
+            aria-label="Menge verringern"
           >
             <Minus className="w-4 h-4" />
           </button>
@@ -99,7 +99,7 @@ const ProductInfo = () => {
           <button
             onClick={() => setQty(qty + 1)}
             className="px-3 py-2.5 sm:py-3 hover:bg-secondary transition-colors text-muted-foreground"
-            aria-label="Increase quantity"
+            aria-label="Menge erhöhen"
           >
             <Plus className="w-4 h-4" />
           </button>
@@ -111,14 +111,14 @@ const ProductInfo = () => {
           onClick={() => navigate(`/checkout?qty=${qty}`)}
         >
           <Heart className="w-5 h-5" />
-          Add to Cart
+          In den Warenkorb
         </Button>
       </div>
 
       {qty > 1 && (
         <p className="text-sm text-muted-foreground">
-          {qty} × ${UNIT_PRICE.toFixed(2)} = <strong className="text-foreground">${total}</strong>
-          <span className="text-primary ml-2">(You save ${savings}!)</span>
+          {qty} × €{UNIT_PRICE.toFixed(2).replace(".", ",")} = <strong className="text-foreground">€{total.replace(".", ",")}</strong>
+          <span className="text-primary ml-2">(Du sparst €{savings.replace(".", ",")}!)</span>
         </p>
       )}
     </div>

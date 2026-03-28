@@ -7,7 +7,7 @@ import { CheckCircle, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 const UNIT_PRICE = 9.95;
-const PRODUCT_NAME = "Weighted Cow Plush";
+const PRODUCT_NAME = "Gewichtetes Kuh-Kuscheltier";
 
 declare global {
   interface Window {
@@ -73,7 +73,7 @@ const Checkout = () => {
 
     const script = document.createElement("script");
     script.id = "paypal-sdk";
-    script.src = `https://www.paypal.com/sdk/js?client-id=${paypalClientId}&currency=USD&intent=tokenize&vault=true`;
+    script.src = `https://www.paypal.com/sdk/js?client-id=${paypalClientId}&currency=EUR&intent=tokenize&vault=true`;
     script.async = true;
     script.onload = () => setPaypalReady(true);
     document.head.appendChild(script);
@@ -100,7 +100,7 @@ const Checkout = () => {
           },
           createBillingAgreement: async () => {
             if (!formValid) {
-              setError("Please fill in all required fields.");
+              setError("Bitte fülle alle Pflichtfelder aus.");
               throw new Error("Form invalid");
             }
             setError("");
@@ -131,7 +131,7 @@ const Checkout = () => {
               return data.tokenId;
             } catch (err: any) {
               setProcessing(false);
-              setError(err.message || "Error processing payment.");
+              setError(err.message || "Fehler bei der Zahlungsverarbeitung.");
               throw err;
             }
           },
@@ -162,7 +162,7 @@ const Checkout = () => {
               setSuccess(true);
             } catch (err: any) {
               setProcessing(false);
-              setError(err.message || "Error completing payment.");
+              setError(err.message || "Fehler beim Abschließen der Zahlung.");
             }
           },
           onCancel: () => {
@@ -172,7 +172,7 @@ const Checkout = () => {
           onError: (err: any) => {
             setProcessing(false);
             console.error("PayPal error:", err);
-            setError("An error occurred. Please try again.");
+            setError("Ein Fehler ist aufgetreten. Bitte versuche es erneut.");
           },
         })
         .render(node);
@@ -189,10 +189,10 @@ const Checkout = () => {
           <div className="text-center max-w-md mx-auto px-4">
             <CheckCircle className="w-16 h-16 text-primary mx-auto mb-4" />
             <h1 className="text-2xl font-extrabold text-foreground mb-2">
-              Thank you for your order!
+              Vielen Dank für deine Bestellung!
             </h1>
             <p className="text-muted-foreground">
-              Confirmation email sent to <strong className="text-foreground">{email}</strong>.
+              Bestätigungsmail an <strong className="text-foreground">{email}</strong>.
             </p>
           </div>
         </main>
@@ -211,7 +211,7 @@ const Checkout = () => {
       <main className="flex-1 py-12 md:py-20">
         <div className="container max-w-lg">
           <h1 className="text-2xl md:text-3xl font-extrabold text-foreground text-center mb-8">
-            Complete Your Order
+            Bestellung abschließen
           </h1>
 
           <div className="bg-background border rounded-xl p-6 mb-6">
@@ -219,109 +219,109 @@ const Checkout = () => {
               <div>
                 <p className="font-bold text-foreground">{PRODUCT_NAME}</p>
                 <p className="text-sm text-muted-foreground">
-                  {quantity} × ${UNIT_PRICE.toFixed(2)} · Free Shipping
+                  {quantity} × €{UNIT_PRICE.toFixed(2).replace(".", ",")} · Kostenloser Versand
                 </p>
               </div>
-              <p className="text-xl font-extrabold text-foreground">${totalPrice.toFixed(2)}</p>
+              <p className="text-xl font-extrabold text-foreground">€{totalPrice.toFixed(2).replace(".", ",")}</p>
             </div>
             <div className="flex justify-between text-sm mb-1">
-              <span className="text-muted-foreground">Subtotal</span>
-              <span className="text-foreground">${totalPrice.toFixed(2)}</span>
+              <span className="text-muted-foreground">Zwischensumme</span>
+              <span className="text-foreground">€{totalPrice.toFixed(2).replace(".", ",")}</span>
             </div>
             <div className="flex justify-between text-sm mb-1">
-              <span className="text-muted-foreground">Shipping</span>
-              <span className="text-primary font-semibold">Free</span>
+              <span className="text-muted-foreground">Versand</span>
+              <span className="text-primary font-semibold">Kostenlos</span>
             </div>
             <div className="flex justify-between font-bold text-foreground pt-3 border-t mt-3">
-              <span>Total</span>
-              <span>${totalPrice.toFixed(2)}</span>
+              <span>Gesamt</span>
+              <span>€{totalPrice.toFixed(2).replace(".", ",")}</span>
             </div>
           </div>
 
           <div className="bg-background border rounded-xl p-6 space-y-4">
             <div>
               <label className="block text-sm font-semibold text-foreground mb-1.5">
-                Full Name *
+                Vollständiger Name *
               </label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Jane Doe"
+                placeholder="Max Mustermann"
                 className={inputCls}
                 disabled={processing}
               />
             </div>
             <div>
               <label className="block text-sm font-semibold text-foreground mb-1.5">
-                Email Address *
+                E-Mail-Adresse *
               </label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="jane@example.com"
+                placeholder="max@beispiel.de"
                 className={inputCls}
                 disabled={processing}
               />
             </div>
             <hr className="border-border" />
-            <p className="text-sm font-semibold text-foreground">Shipping Address</p>
+            <p className="text-sm font-semibold text-foreground">Lieferadresse</p>
             <div>
               <label className="block text-sm font-semibold text-foreground mb-1.5">
-                Street Address *
+                Straße und Hausnummer *
               </label>
               <input
                 type="text"
                 value={addressLine1}
                 onChange={(e) => setAddressLine1(e.target.value)}
-                placeholder="123 Main Street"
+                placeholder="Musterstraße 1"
                 className={inputCls}
                 disabled={processing}
               />
             </div>
             <div>
               <label className="block text-sm font-semibold text-foreground mb-1.5">
-                Apt / Suite
+                Adresszusatz
               </label>
               <input
                 type="text"
                 value={addressLine2}
                 onChange={(e) => setAddressLine2(e.target.value)}
-                placeholder="Apartment, suite (optional)"
+                placeholder="Wohnung, Etage (optional)"
                 className={inputCls}
                 disabled={processing}
               />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-1.5">Zip Code *</label>
+                <label className="block text-sm font-semibold text-foreground mb-1.5">PLZ *</label>
                 <input
                   type="text"
                   value={postalCode}
                   onChange={(e) => setPostalCode(e.target.value)}
-                  placeholder="10001"
+                  placeholder="10115"
                   className={inputCls}
                   disabled={processing}
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-1.5">City *</label>
+                <label className="block text-sm font-semibold text-foreground mb-1.5">Stadt *</label>
                 <input
                   type="text"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  placeholder="New York"
+                  placeholder="Berlin"
                   className={inputCls}
                   disabled={processing}
                 />
               </div>
             </div>
             <div>
-              <label className="block text-sm font-semibold text-foreground mb-1.5">Country</label>
+              <label className="block text-sm font-semibold text-foreground mb-1.5">Land</label>
               <input
                 type="text"
-                value="United States"
+                value="Deutschland"
                 disabled
                 className="w-full border rounded-lg px-4 py-3 text-sm bg-muted text-muted-foreground cursor-not-allowed"
               />
@@ -332,7 +332,7 @@ const Checkout = () => {
             {processing && (
               <div className="flex items-center justify-center py-4 gap-2 text-muted-foreground">
                 <Loader2 className="w-5 h-5 animate-spin" />
-                <span className="text-sm">Processing payment...</span>
+                <span className="text-sm">Zahlung wird verarbeitet...</span>
               </div>
             )}
 
@@ -344,12 +344,12 @@ const Checkout = () => {
             ) : (
               <div className="text-center py-4">
                 <Loader2 className="w-5 h-5 animate-spin mx-auto mb-2 text-muted-foreground" />
-                <p className="text-xs text-muted-foreground">Loading payment method...</p>
+                <p className="text-xs text-muted-foreground">Zahlungsmethode wird geladen...</p>
               </div>
             )}
 
             <p className="text-xs text-muted-foreground text-center">
-              🔒 Secure payment · Your data is encrypted
+              🔒 Sichere Zahlung · Deine Daten werden verschlüsselt übertragen
             </p>
           </div>
         </div>

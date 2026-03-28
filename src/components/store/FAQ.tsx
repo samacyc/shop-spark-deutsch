@@ -6,11 +6,11 @@ import {
 } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "How heavy is the weighted cow plush?", a: "Our weighted cow plush has just the right amount of weight to provide a comforting, calming pressure — similar to a weighted blanket, but in an adorable, huggable form." },
-  { q: "Is it safe for children?", a: "Yes! Our plushies are made with child-safe materials and are suitable for all ages. The weight is gentle enough for children while still providing comfort for adults." },
-  { q: "Can I microwave it?", a: "Yes! You can microwave the plush for a warm, soothing cuddle. Just heat for 30-60 seconds and enjoy the warmth. Perfect for cold nights or cramp relief." },
-  { q: "How do I clean it?", a: "The plush can be spot-cleaned with a damp cloth and mild soap. For deeper cleaning, hand wash gently in cold water and air dry. Do not machine wash." },
-  { q: "What makes it different from regular stuffed animals?", a: "Unlike regular stuffed animals, our plush is weighted to provide calming deep-pressure stimulation. The ultra-soft premium fur is softer than any plush you've ever felt, and the weight helps reduce anxiety and improve sleep." },
+  { q: "Wie schwer ist das gewichtete Kuh-Kuscheltier?", a: "Unser gewichtetes Kuh-Kuscheltier hat genau das richtige Gewicht, um einen beruhigenden, wohltuenden Druck zu erzeugen — ähnlich wie eine Gewichtsdecke, aber in einer entzückenden, kuschelbaren Form." },
+  { q: "Ist es für Kinder geeignet?", a: "Ja! Unsere Kuscheltiere bestehen aus kindersicheren Materialien und sind für alle Altersgruppen geeignet. Das Gewicht ist sanft genug für Kinder und bietet dennoch Komfort für Erwachsene." },
+  { q: "Kann ich es in der Mikrowelle erwärmen?", a: "Ja! Du kannst das Kuscheltier für 30–60 Sekunden in der Mikrowelle erwärmen und eine warme, beruhigende Umarmung genießen. Perfekt für kalte Nächte oder Krämpfe." },
+  { q: "Wie reinige ich es?", a: "Das Kuscheltier kann mit einem feuchten Tuch und milder Seife gereinigt werden. Für eine gründlichere Reinigung von Hand in kaltem Wasser waschen und an der Luft trocknen lassen. Nicht in der Waschmaschine waschen." },
+  { q: "Was macht es anders als normale Kuscheltiere?", a: "Im Gegensatz zu normalen Kuscheltieren ist unser Plüschtier gewichtet und bietet beruhigende Tiefendruckstimulation. Das ultra-weiche Premium-Fell ist weicher als jedes Plüschtier, das du je berührt hast, und das Gewicht hilft, Angst zu reduzieren und den Schlaf zu verbessern." },
 ];
 
 const FAQ = () => {
@@ -19,10 +19,10 @@ const FAQ = () => {
       <div className="container">
         <p className="text-center text-xs font-semibold text-muted-foreground tracking-wider uppercase mb-2">FAQ</p>
         <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-3 text-foreground">
-          Frequently Asked Questions
+          Häufig gestellte Fragen
         </h2>
         <p className="text-center text-muted-foreground mb-10 max-w-lg mx-auto">
-          Everything you need to know before you buy.
+          Alles, was du vor dem Kauf wissen solltest.
         </p>
         <div className="max-w-2xl mx-auto">
           <Accordion type="single" collapsible className="space-y-3">

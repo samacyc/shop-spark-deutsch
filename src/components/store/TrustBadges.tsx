@@ -1,10 +1,10 @@
 import { RotateCcw, Shield, Lock, Truck } from "lucide-react";
 
 const badges = [
-  { icon: RotateCcw, title: "Easy Returns", desc: "Hassle-free returns & exchanges" },
-  { icon: Shield, title: "Quality Guarantee", desc: "Premium materials built to last" },
-  { icon: Lock, title: "Secure Checkout", desc: "Encrypted & protected payment" },
-  { icon: Truck, title: "Fast Shipping", desc: "Quick delivery to your door" },
+  { icon: RotateCcw, title: "Einfache Rückgabe", desc: "Unkomplizierte Rückgabe & Umtausch" },
+  { icon: Shield, title: "Qualitätsgarantie", desc: "Premium-Materialien für lange Freude" },
+  { icon: Lock, title: "Sicherer Einkauf", desc: "Verschlüsselte & geschützte Zahlung" },
+  { icon: Truck, title: "Schneller Versand", desc: "Zügige Lieferung direkt zu dir" },
 ];
 
 const TrustBadges = () => {
