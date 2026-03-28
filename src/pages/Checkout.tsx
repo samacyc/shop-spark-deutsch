@@ -73,7 +73,7 @@ const Checkout = () => {
 
     const script = document.createElement("script");
     script.id = "paypal-sdk";
-    script.src = `https://www.paypal.com/sdk/js?client-id=${paypalClientId}&currency=EUR&intent=tokenize&vault=true`;
+    script.src = `https://www.paypal.com/sdk/js?client-id=${paypalClientId}&currency=EUR`;
     script.async = true;
     script.onload = () => setPaypalReady(true);
     document.head.appendChild(script);
@@ -98,7 +98,7 @@ const Checkout = () => {
             label: "pay",
             height: 45,
           },
-          createBillingAgreement: async () => {
+          createOrder: async () => {
             if (!formValid) {
               setError("Bitte fülle alle Pflichtfelder aus.");
               throw new Error("Form invalid");
@@ -113,22 +113,14 @@ const Checkout = () => {
                   method: "POST",
                   body: {
                     amount: totalPrice,
-                    name,
-                    email,
-                    addressLine1,
-                    addressLine2,
-                    city,
-                    postalCode,
                     quantity,
-                    returnUrl: window.location.href,
-                    cancelUrl: window.location.href,
                   },
                 }
               );
 
               if (fnError) throw fnError;
               if (data?.error) throw new Error(data.error);
-              return data.tokenId;
+              return data.orderId;
             } catch (err: any) {
               setProcessing(false);
               setError(err.message || "Fehler bei der Zahlungsverarbeitung.");
@@ -142,7 +134,7 @@ const Checkout = () => {
                 {
                   method: "POST",
                   body: {
-                    tokenId: data.billingToken,
+                    orderId: data.orderID,
                     name,
                     email,
                     addressLine1,
