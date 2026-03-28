@@ -43,9 +43,9 @@ Deno.serve(async (req) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
 
-    const { tokenId, name, email, addressLine1, addressLine2, city, postalCode, amount, quantity } = await req.json();
+    const { orderId, name, email, addressLine1, addressLine2, city, postalCode, amount, quantity } = await req.json();
 
-    if (!tokenId || !name || !email) {
+    if (!orderId || !name || !email) {
       return new Response(JSON.stringify({ error: "Missing required fields" }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -59,23 +59,22 @@ Deno.serve(async (req) => {
       creds.is_sandbox
     );
 
-    // Execute billing agreement
-    const executeRes = await fetch(`${baseUrl}/v1/billing-agreements/agreements`, {
+    // Capture order using Orders API v2
+    const captureRes = await fetch(`${baseUrl}/v2/checkout/orders/${orderId}/capture`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${accessToken}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token_id: tokenId }),
     });
 
-    const executeData = await executeRes.json();
-    if (!executeRes.ok) {
-      console.error("PayPal execute error:", JSON.stringify(executeData));
-      throw new Error(`Failed to execute agreement: ${JSON.stringify(executeData)}`);
+    const captureData = await captureRes.json();
+    if (!captureRes.ok) {
+      console.error("PayPal capture error:", JSON.stringify(captureData));
+      throw new Error(`Failed to capture order: ${JSON.stringify(captureData)}`);
     }
 
-    const billingAgreementId = executeData.id;
+    const captureId = captureData.purchase_units?.[0]?.payments?.captures?.[0]?.id || captureData.id;
 
     // Save customer
     const { data: customer, error: customerError } = await supabase
@@ -83,7 +82,7 @@ Deno.serve(async (req) => {
       .insert({
         name,
         email,
-        billing_agreement_id: billingAgreementId,
+        billing_agreement_id: captureId,
         address_line1: addressLine1 || null,
         address_line2: addressLine2 || null,
         city: city || null,
@@ -97,18 +96,18 @@ Deno.serve(async (req) => {
       throw new Error("Failed to save customer");
     }
 
-    // Record initial transaction
+    // Record transaction
     await supabase.from("transactions").insert({
       customer_id: customer.id,
       amount: amount || 0,
       currency: "EUR",
       status: "completed",
-      paypal_payment_id: billingAgreementId,
-      description: `Initial payment: ${quantity}x Elec Chair`,
+      paypal_payment_id: captureId,
+      description: `Payment: ${quantity}x Gewichtetes Kuh-Kuscheltier`,
     });
 
     return new Response(
-      JSON.stringify({ success: true, billingAgreementId, customerId: customer.id }),
+      JSON.stringify({ success: true, captureId, customerId: customer.id }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (err) {

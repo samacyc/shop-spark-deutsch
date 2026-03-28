@@ -43,9 +43,9 @@ Deno.serve(async (req) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
 
-    const { amount, name, email, addressLine1, addressLine2, city, postalCode, quantity, returnUrl, cancelUrl } = await req.json();
+    const { amount, quantity } = await req.json();
 
-    if (!amount || !name || !email || !returnUrl || !cancelUrl) {
+    if (!amount) {
       return new Response(JSON.stringify({ error: "Missing required fields" }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -59,46 +59,35 @@ Deno.serve(async (req) => {
       creds.is_sandbox
     );
 
-    // Create billing agreement token
-    const agreementRes = await fetch(`${baseUrl}/v1/billing-agreements/agreement-tokens`, {
+    // Create order using Orders API v2
+    const orderRes = await fetch(`${baseUrl}/v2/checkout/orders`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${accessToken}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        description: `Payment for ${quantity}x Elec Chair`,
-        payer: {
-          payment_method: "PAYPAL",
-        },
-        plan: {
-          type: "MERCHANT_INITIATED_BILLING_SINGLE_AGREEMENT",
-          merchant_preferences: {
-            return_url: returnUrl,
-            cancel_url: cancelUrl,
-            accepted_pymt_type: "INSTANT",
-            skip_shipping_address: false,
-            immutable_shipping_address: true,
+        intent: "CAPTURE",
+        purchase_units: [
+          {
+            amount: {
+              currency_code: "EUR",
+              value: amount.toFixed(2),
+            },
+            description: `${quantity}x Gewichtetes Kuh-Kuscheltier`,
           },
-        },
-        shipping_address: {
-          line1: addressLine1 || "",
-          line2: addressLine2 || "",
-          city: city || "",
-          postal_code: postalCode || "",
-          country_code: "DE",
-        },
+        ],
       }),
     });
 
-    const agreementData = await agreementRes.json();
-    if (!agreementRes.ok) {
-      console.error("PayPal agreement token error:", JSON.stringify(agreementData));
-      throw new Error(`Failed to create agreement token: ${JSON.stringify(agreementData)}`);
+    const orderData = await orderRes.json();
+    if (!orderRes.ok) {
+      console.error("PayPal create order error:", JSON.stringify(orderData));
+      throw new Error(`Failed to create order: ${JSON.stringify(orderData)}`);
     }
 
     return new Response(
-      JSON.stringify({ tokenId: agreementData.token_id }),
+      JSON.stringify({ orderId: orderData.id }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (err) {
