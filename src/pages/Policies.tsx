@@ -8,34 +8,34 @@ const policies: Record<string, { title: string; content: string[] }> = {
   datenschutz: {
     title: "Datenschutzerklärung",
     content: [
-      "1. Verantwortlicher\nElecChairDE GmbH, Musterstraße 12, 10115 Berlin, Deutschland\nE-Mail: support@elecchairde.shop",
+      "1. Verantwortlicher\nRosa Plushies GmbH, Musterstraße 12, 10115 Berlin, Deutschland\nE-Mail: support@rosaplushies.com",
       "2. Erhebung und Verarbeitung personenbezogener Daten\nWir erheben personenbezogene Daten nur, soweit dies zur Bereitstellung unserer Dienste erforderlich ist. Dazu gehören: Name, E-Mail-Adresse, Lieferadresse und Zahlungsinformationen.",
-      "3. Zweck der Datenverarbeitung\nIhre Daten werden ausschließlich zur Abwicklung Ihrer Bestellung, zur Kommunikation und zur Verbesserung unseres Angebots verwendet.",
-      "4. Weitergabe an Dritte\nEine Weitergabe Ihrer Daten an Dritte erfolgt nur im Rahmen der Vertragserfüllung (z.B. an Versanddienstleister) oder wenn eine gesetzliche Verpflichtung besteht.",
-      "5. Cookies\nUnsere Website verwendet technisch notwendige Cookies. Analyse-Cookies werden nur mit Ihrer Einwilligung gesetzt.",
-      "6. Ihre Rechte\nSie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer Daten gemäß DSGVO. Kontaktieren Sie uns unter support@elecchairde.shop.",
+      "3. Zweck der Datenverarbeitung\nDeine Daten werden ausschließlich zur Abwicklung deiner Bestellung, zur Kommunikation und zur Verbesserung unseres Angebots verwendet.",
+      "4. Weitergabe an Dritte\nEine Weitergabe deiner Daten an Dritte erfolgt nur im Rahmen der Vertragserfüllung (z.B. an Versanddienstleister) oder wenn eine gesetzliche Verpflichtung besteht.",
+      "5. Cookies\nUnsere Website verwendet technisch notwendige Cookies. Analyse-Cookies werden nur mit deiner Einwilligung gesetzt.",
+      "6. Deine Rechte\nDu hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner Daten gemäß DSGVO. Kontaktiere uns unter support@rosaplushies.com.",
       "7. Aufbewahrung\nPersonenbezogene Daten werden nur so lange gespeichert, wie es für die Erfüllung des Verarbeitungszwecks erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen."
     ],
   },
   widerrufsrecht: {
     title: "Widerrufsbelehrung",
     content: [
-      "Widerrufsrecht\nSie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.",
-      "Widerrufsfrist\nDie Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter die Waren in Besitz genommen haben.",
-      "Ausübung des Widerrufsrechts\nUm Ihr Widerrufsrecht auszuüben, müssen Sie uns (Elec Chair, Musterstraße 12, 10115 Berlin, support@elecchairde.shop) mittels einer eindeutigen Erklärung informieren.",
-      "Folgen des Widerrufs\nWenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten, unverzüglich und spätestens binnen vierzehn Tagen zurückzuzahlen.",
-      "Rücksendung\nSie haben die Waren unverzüglich und in jedem Fall spätestens binnen vierzehn Tagen ab dem Tag, an dem Sie uns über den Widerruf unterrichten, an uns zurückzusenden.",
+      "Widerrufsrecht\nDu hast das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.",
+      "Widerrufsfrist\nDie Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem du oder ein von dir benannter Dritter die Waren in Besitz genommen hast.",
+      "Ausübung des Widerrufsrechts\nUm dein Widerrufsrecht auszuüben, musst du uns (Rosa Plushies GmbH, Musterstraße 12, 10115 Berlin, support@rosaplushies.com) mittels einer eindeutigen Erklärung informieren.",
+      "Folgen des Widerrufs\nWenn du diesen Vertrag widerrufst, haben wir dir alle Zahlungen, die wir von dir erhalten haben, einschließlich der Lieferkosten, unverzüglich und spätestens binnen vierzehn Tagen zurückzuzahlen.",
+      "Rücksendung\nDu hast die Waren unverzüglich und in jedem Fall spätestens binnen vierzehn Tagen ab dem Tag, an dem du uns über den Widerruf unterrichtest, an uns zurückzusenden.",
     ],
   },
   agb: {
     title: "Allgemeine Geschäftsbedingungen (AGB)",
     content: [
       "1. Geltungsbereich\nDiese Allgemeinen Geschäftsbedingungen gelten für alle Bestellungen über unseren Online-Shop.",
-      "2. Vertragsschluss\nDie Darstellung der Produkte im Online-Shop stellt kein rechtlich bindendes Angebot dar. Durch Anklicken des Bestellbuttons geben Sie eine verbindliche Bestellung ab.",
+      "2. Vertragsschluss\nDie Darstellung der Produkte im Online-Shop stellt kein rechtlich bindendes Angebot dar. Durch Anklicken des Bestellbuttons gibst du eine verbindliche Bestellung ab.",
       "3. Preise und Zahlung\nAlle Preise verstehen sich inklusive der gesetzlichen Mehrwertsteuer. Versandkosten entfallen bei Lieferung innerhalb Deutschlands. Die Zahlung erfolgt über PayPal.",
-      "4. Lieferung\nDie Lieferung erfolgt an die von Ihnen angegebene Adresse. Die Lieferzeit beträgt in der Regel 2–3 Werktage innerhalb Deutschlands.",
+      "4. Lieferung\nDie Lieferung erfolgt an die von dir angegebene Adresse. Die Lieferzeit beträgt in der Regel 2–3 Werktage innerhalb Deutschlands.",
       "5. Eigentumsvorbehalt\nDie gelieferte Ware bleibt bis zur vollständigen Bezahlung unser Eigentum.",
-      "6. Gewährleistung\nEs gelten die gesetzlichen Gewährleistungsrechte. Zusätzlich bieten wir eine 2-Jahres-Garantie auf den Elec Chair.",
+      "6. Gewährleistung\nEs gelten die gesetzlichen Gewährleistungsrechte.",
       "7. Haftung\nWir haften unbeschränkt für Vorsatz und grobe Fahrlässigkeit.",
       "8. Anwendbares Recht\nEs gilt das Recht der Bundesrepublik Deutschland. Gerichtsstand ist Berlin."
     ],
@@ -45,10 +45,10 @@ const policies: Record<string, { title: string; content: string[] }> = {
     content: [
       "Kostenloser Versand\nWir bieten kostenlosen Versand für alle Bestellungen innerhalb Deutschlands an.",
       "Lieferzeiten\nStandardversand: 2–3 Werktage innerhalb Deutschlands.",
-      "Versanddienstleister\nWir versenden mit DHL und DPD. Nach dem Versand erhalten Sie eine Sendungsverfolgungsnummer per E-Mail.",
+      "Versanddienstleister\nWir versenden mit DHL und DPD. Nach dem Versand erhältst du eine Sendungsverfolgungsnummer per E-Mail.",
       "Liefergebiet\nWir liefern derzeit nur innerhalb Deutschlands.",
-      "Verpackung\nAlle Elec Chair Produkte werden sicher und sorgfältig verpackt.",
-      "Lieferprobleme\nSollte Ihre Bestellung nicht innerhalb der angegebenen Lieferzeit eintreffen, kontaktieren Sie uns bitte unter support@elecchairde.shop.",
+      "Verpackung\nAlle Rosa Plushies Produkte werden sicher und sorgfältig verpackt.",
+      "Lieferprobleme\nSollte deine Bestellung nicht innerhalb der angegebenen Lieferzeit eintreffen, kontaktiere uns bitte unter support@rosaplushies.com.",
     ],
   },
 };
