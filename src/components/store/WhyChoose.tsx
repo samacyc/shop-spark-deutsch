@@ -3,21 +3,21 @@ import p4 from "@/assets/products/plush/plush4.jpg";
 import p6 from "@/assets/products/plush/plush6.jpg";
 
 const cards = [
-  { img: p3, title: "Sleep Better", desc: "Nothing beats falling asleep with a hug from our weighted plushie. You'll drift off faster than ever before." },
-  { img: p4, title: "Reduce Stress", desc: "The comforting weight has been proven to reduce stress, increase focus, and boost serotonin levels naturally." },
-  { img: p6, title: "The Perfect Gift", desc: "Our weighted plushies are the perfect gift for a family member or friend. We promise they'll never forget it!" },
+  { img: p3, title: "Besser Schlafen", desc: "Nichts ist schöner als mit einer Umarmung von unserem gewichteten Kuscheltier einzuschlafen. Du wirst schneller einschlafen als je zuvor." },
+  { img: p4, title: "Stress Reduzieren", desc: "Das beruhigende Gewicht reduziert nachweislich Stress, steigert die Konzentration und erhöht den Serotoninspiegel auf natürliche Weise." },
+  { img: p6, title: "Das Perfekte Geschenk", desc: "Unsere gewichteten Kuscheltiere sind das perfekte Geschenk für Familie oder Freunde. Wir versprechen — sie werden es nie vergessen!" },
 ];
 
 const WhyChoose = () => {
   return (
     <section className="py-16">
       <div className="container">
-        <p className="text-center text-xs font-semibold text-muted-foreground tracking-wider uppercase mb-2">Why Rosa</p>
+        <p className="text-center text-xs font-semibold text-muted-foreground tracking-wider uppercase mb-2">Warum Rosa</p>
         <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-3 text-foreground">
-          Make Any Day Better with a Weighted Plushie
+          Mach jeden Tag besser mit einem gewichteten Kuscheltier
         </h2>
         <p className="text-center text-muted-foreground mb-10 max-w-lg mx-auto">
-          Designed for comfort, crafted with love.
+          Für Komfort designt, mit Liebe gefertigt.
         </p>
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {cards.map((c) => (

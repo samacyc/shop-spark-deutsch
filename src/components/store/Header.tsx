@@ -6,9 +6,9 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/kontakt", label: "Contact" },
-    { href: "/bestellung-verfolgen", label: "Track Order" },
+    { href: "/", label: "Startseite" },
+    { href: "/kontakt", label: "Kontakt" },
+    { href: "/bestellung-verfolgen", label: "Bestellung verfolgen" },
   ];
 
   return (
@@ -25,13 +25,13 @@ const Header = () => {
           ))}
         </nav>
         <div className="flex items-center gap-4 text-muted-foreground">
-          <button className="hover:text-foreground transition-colors" aria-label="Search">
+          <button className="hover:text-foreground transition-colors" aria-label="Suche">
             <Search className="w-5 h-5" />
           </button>
-          <button className="hover:text-foreground transition-colors" aria-label="Account">
+          <button className="hover:text-foreground transition-colors" aria-label="Konto">
             <User className="w-5 h-5" />
           </button>
-          <button className="md:hidden hover:text-foreground transition-colors" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
+          <button className="md:hidden hover:text-foreground transition-colors" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menü">
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
