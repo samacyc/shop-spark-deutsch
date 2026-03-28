@@ -6,7 +6,7 @@ import Footer from "@/components/store/Footer";
 import { CheckCircle, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
-const UNIT_PRICE = 1.00;
+const UNIT_PRICE = 9.99;
 const PRODUCT_NAME = "Gewichtetes Kuh-Kuscheltier";
 
 declare global {
