@@ -34,8 +34,8 @@ const Contact = () => {
       <Header />
       <main className="flex-1 py-12 md:py-20">
         <div className="container max-w-5xl">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-foreground mb-2">Kontaktieren Sie uns</h1>
-          <p className="text-muted-foreground mb-10">Wir sind für Sie da. Senden Sie uns eine Nachricht und wir antworten innerhalb von 24 Stunden.</p>
+          <h1 className="text-3xl md:text-4xl font-extrabold text-foreground mb-2">Kontaktiere uns</h1>
+          <p className="text-muted-foreground mb-10">Wir sind für dich da. Sende uns eine Nachricht und wir antworten innerhalb von 24 Stunden.</p>
 
           <div className="grid md:grid-cols-3 gap-10">
             <div className="space-y-6">
@@ -43,7 +43,7 @@ const Contact = () => {
                 <Mail className="w-5 h-5 text-primary mt-0.5" />
                 <div>
                   <p className="font-semibold text-foreground text-sm">E-Mail</p>
-                  <p className="text-sm text-muted-foreground">support@elecchairde.shop</p>
+                  <p className="text-sm text-muted-foreground">support@rosaplushies.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -57,7 +57,7 @@ const Contact = () => {
                 <MapPin className="w-5 h-5 text-primary mt-0.5" />
                 <div>
                   <p className="font-semibold text-foreground text-sm">Adresse</p>
-                  <p className="text-sm text-muted-foreground">ElecChairDE GmbH<br />Musterstraße 12<br />10115 Berlin, Deutschland</p>
+                  <p className="text-sm text-muted-foreground">Rosa Plushies GmbH<br />Musterstraße 12<br />10115 Berlin, Deutschland</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -73,7 +73,7 @@ const Contact = () => {
               {submitted ? (
                 <div className="bg-primary/10 border border-primary/20 rounded-lg p-8 text-center">
                   <p className="text-xl font-bold text-foreground mb-2">Vielen Dank!</p>
-                  <p className="text-muted-foreground">Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns in Kürze bei Ihnen.</p>
+                  <p className="text-muted-foreground">Deine Nachricht wurde erfolgreich gesendet. Wir melden uns in Kürze bei dir.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
