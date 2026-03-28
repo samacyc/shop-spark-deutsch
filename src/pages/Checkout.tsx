@@ -93,8 +93,8 @@ const Checkout = () => {
         .Buttons({
           style: {
             layout: "vertical",
-            color: "gold",
-            shape: "pill",
+            color: "blue",
+            shape: "rect",
             label: "pay",
             height: 45,
           },
