@@ -47,8 +47,8 @@ const policies: Record<string, { title: string; content: string[] }> = {
       "Lieferzeiten\nStandardversand: 2–3 Werktage innerhalb Deutschlands.",
       "Versanddienstleister\nWir versenden mit DHL und DPD. Nach dem Versand erhältst du eine Sendungsverfolgungsnummer per E-Mail.",
       "Liefergebiet\nWir liefern derzeit nur innerhalb Deutschlands.",
-      "Verpackung\nAlle Rosa Plushies Produkte werden sicher und sorgfältig verpackt.",
-      "Lieferprobleme\nSollte deine Bestellung nicht innerhalb der angegebenen Lieferzeit eintreffen, kontaktiere uns bitte unter support@rosaplushies.com.",
+      "Verpackung\nAlle Liovero Produkte werden sicher und sorgfältig verpackt.",
+      "Lieferprobleme\nSollte deine Bestellung nicht innerhalb der angegebenen Lieferzeit eintreffen, kontaktiere uns bitte unter support@liovero.shop.",
     ],
   },
 };
