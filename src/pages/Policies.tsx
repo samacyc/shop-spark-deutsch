@@ -22,7 +22,7 @@ const policies: Record<string, { title: string; content: string[] }> = {
     content: [
       "Widerrufsrecht\nDu hast das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.",
       "Widerrufsfrist\nDie Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem du oder ein von dir benannter Dritter die Waren in Besitz genommen hast.",
-      "Ausübung des Widerrufsrechts\nUm dein Widerrufsrecht auszuüben, musst du uns (Rosa Plushies GmbH, Musterstraße 12, 10115 Berlin, support@rosaplushies.com) mittels einer eindeutigen Erklärung informieren.",
+      "Ausübung des Widerrufsrechts\nUm dein Widerrufsrecht auszuüben, musst du uns (Liovero GmbH, Musterstraße 12, 10115 Berlin, support@liovero.shop) mittels einer eindeutigen Erklärung informieren.",
       "Folgen des Widerrufs\nWenn du diesen Vertrag widerrufst, haben wir dir alle Zahlungen, die wir von dir erhalten haben, einschließlich der Lieferkosten, unverzüglich und spätestens binnen vierzehn Tagen zurückzuzahlen.",
       "Rücksendung\nDu hast die Waren unverzüglich und in jedem Fall spätestens binnen vierzehn Tagen ab dem Tag, an dem du uns über den Widerruf unterrichtest, an uns zurückzusenden.",
     ],
