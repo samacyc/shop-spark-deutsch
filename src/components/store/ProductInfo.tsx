@@ -80,7 +80,7 @@ const ProductInfo = () => {
           </p>
         </div>
         <span className="bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full whitespace-nowrap">
-          rosa
+          Liovero
         </span>
       </div>
 

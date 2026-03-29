@@ -7,9 +7,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
             <Link to="/" className="font-extrabold text-lg text-background mb-1 block">
-               rosa 🌸
+               Liovero
             </Link>
-            <p className="text-sm">© 2026 Rosa Plushies. Alle Rechte vorbehalten.</p>
+            <p className="text-sm">© 2026 Liovero. Alle Rechte vorbehalten.</p>
           </div>
           <div className="flex flex-wrap justify-center md:justify-end gap-4 sm:gap-6 text-xs sm:text-sm">
             <Link to="/policies/datenschutz" className="hover:text-background transition-colors">Datenschutz</Link>
