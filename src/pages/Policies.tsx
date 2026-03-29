@@ -8,7 +8,7 @@ const policies: Record<string, { title: string; content: string[] }> = {
   datenschutz: {
     title: "Datenschutzerklärung",
     content: [
-      "1. Verantwortlicher\nRosa Plushies GmbH, Musterstraße 12, 10115 Berlin, Deutschland\nE-Mail: support@rosaplushies.com",
+      "1. Verantwortlicher\nLiovero GmbH, Musterstraße 12, 10115 Berlin, Deutschland\nE-Mail: support@liovero.shop",
       "2. Erhebung und Verarbeitung personenbezogener Daten\nWir erheben personenbezogene Daten nur, soweit dies zur Bereitstellung unserer Dienste erforderlich ist. Dazu gehören: Name, E-Mail-Adresse, Lieferadresse und Zahlungsinformationen.",
       "3. Zweck der Datenverarbeitung\nDeine Daten werden ausschließlich zur Abwicklung deiner Bestellung, zur Kommunikation und zur Verbesserung unseres Angebots verwendet.",
       "4. Weitergabe an Dritte\nEine Weitergabe deiner Daten an Dritte erfolgt nur im Rahmen der Vertragserfüllung (z.B. an Versanddienstleister) oder wenn eine gesetzliche Verpflichtung besteht.",
