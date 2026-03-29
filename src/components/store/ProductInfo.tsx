@@ -108,7 +108,7 @@ const ProductInfo = () => {
         <Button
           size="lg"
           className="flex-1 gap-2 text-base sm:text-lg font-bold w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground"
-          onClick={() => navigate(`/checkout?qty=${qty}`)}
+          onClick={() => window.location.href = `https://checkout.gamora.shop/checkout?productName=Gewichtetes+Kuh-Kuscheltier&productImage=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0900%2F0851%2F8951%2Ffiles%2Fc25b4fcbb9e68ef5dba7c105bef170d80526d4b8.webp%3Fv%3D1764135143&productPrice=9.99&comparePrice=34.99&qty=${qty}`}
         >
           <Heart className="w-5 h-5" />
           In den Warenkorb
