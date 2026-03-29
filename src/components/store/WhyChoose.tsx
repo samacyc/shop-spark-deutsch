@@ -12,7 +12,7 @@ const WhyChoose = () => {
   return (
     <section className="py-16">
       <div className="container">
-        <p className="text-center text-xs font-semibold text-muted-foreground tracking-wider uppercase mb-2">Warum Rosa</p>
+        <p className="text-center text-xs font-semibold text-muted-foreground tracking-wider uppercase mb-2">Warum Liovero</p>
         <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-3 text-foreground">
           Mach jeden Tag besser mit einem gewichteten Kuscheltier
         </h2>

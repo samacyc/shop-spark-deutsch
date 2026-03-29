@@ -8,12 +8,12 @@ const policies: Record<string, { title: string; content: string[] }> = {
   datenschutz: {
     title: "Datenschutzerklärung",
     content: [
-      "1. Verantwortlicher\nRosa Plushies GmbH, Musterstraße 12, 10115 Berlin, Deutschland\nE-Mail: support@rosaplushies.com",
+      "1. Verantwortlicher\nLiovero GmbH, Musterstraße 12, 10115 Berlin, Deutschland\nE-Mail: support@liovero.shop",
       "2. Erhebung und Verarbeitung personenbezogener Daten\nWir erheben personenbezogene Daten nur, soweit dies zur Bereitstellung unserer Dienste erforderlich ist. Dazu gehören: Name, E-Mail-Adresse, Lieferadresse und Zahlungsinformationen.",
       "3. Zweck der Datenverarbeitung\nDeine Daten werden ausschließlich zur Abwicklung deiner Bestellung, zur Kommunikation und zur Verbesserung unseres Angebots verwendet.",
       "4. Weitergabe an Dritte\nEine Weitergabe deiner Daten an Dritte erfolgt nur im Rahmen der Vertragserfüllung (z.B. an Versanddienstleister) oder wenn eine gesetzliche Verpflichtung besteht.",
       "5. Cookies\nUnsere Website verwendet technisch notwendige Cookies. Analyse-Cookies werden nur mit deiner Einwilligung gesetzt.",
-      "6. Deine Rechte\nDu hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner Daten gemäß DSGVO. Kontaktiere uns unter support@rosaplushies.com.",
+      "6. Deine Rechte\nDu hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner Daten gemäß DSGVO. Kontaktiere uns unter support@liovero.shop.",
       "7. Aufbewahrung\nPersonenbezogene Daten werden nur so lange gespeichert, wie es für die Erfüllung des Verarbeitungszwecks erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen."
     ],
   },
@@ -22,7 +22,7 @@ const policies: Record<string, { title: string; content: string[] }> = {
     content: [
       "Widerrufsrecht\nDu hast das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.",
       "Widerrufsfrist\nDie Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem du oder ein von dir benannter Dritter die Waren in Besitz genommen hast.",
-      "Ausübung des Widerrufsrechts\nUm dein Widerrufsrecht auszuüben, musst du uns (Rosa Plushies GmbH, Musterstraße 12, 10115 Berlin, support@rosaplushies.com) mittels einer eindeutigen Erklärung informieren.",
+      "Ausübung des Widerrufsrechts\nUm dein Widerrufsrecht auszuüben, musst du uns (Liovero GmbH, Musterstraße 12, 10115 Berlin, support@liovero.shop) mittels einer eindeutigen Erklärung informieren.",
       "Folgen des Widerrufs\nWenn du diesen Vertrag widerrufst, haben wir dir alle Zahlungen, die wir von dir erhalten haben, einschließlich der Lieferkosten, unverzüglich und spätestens binnen vierzehn Tagen zurückzuzahlen.",
       "Rücksendung\nDu hast die Waren unverzüglich und in jedem Fall spätestens binnen vierzehn Tagen ab dem Tag, an dem du uns über den Widerruf unterrichtest, an uns zurückzusenden.",
     ],
@@ -47,8 +47,8 @@ const policies: Record<string, { title: string; content: string[] }> = {
       "Lieferzeiten\nStandardversand: 2–3 Werktage innerhalb Deutschlands.",
       "Versanddienstleister\nWir versenden mit DHL und DPD. Nach dem Versand erhältst du eine Sendungsverfolgungsnummer per E-Mail.",
       "Liefergebiet\nWir liefern derzeit nur innerhalb Deutschlands.",
-      "Verpackung\nAlle Rosa Plushies Produkte werden sicher und sorgfältig verpackt.",
-      "Lieferprobleme\nSollte deine Bestellung nicht innerhalb der angegebenen Lieferzeit eintreffen, kontaktiere uns bitte unter support@rosaplushies.com.",
+      "Verpackung\nAlle Liovero Produkte werden sicher und sorgfältig verpackt.",
+      "Lieferprobleme\nSollte deine Bestellung nicht innerhalb der angegebenen Lieferzeit eintreffen, kontaktiere uns bitte unter support@liovero.shop.",
     ],
   },
 };
