@@ -13,7 +13,7 @@ const policies: Record<string, { title: string; content: string[] }> = {
       "3. Zweck der Datenverarbeitung\nDeine Daten werden ausschließlich zur Abwicklung deiner Bestellung, zur Kommunikation und zur Verbesserung unseres Angebots verwendet.",
       "4. Weitergabe an Dritte\nEine Weitergabe deiner Daten an Dritte erfolgt nur im Rahmen der Vertragserfüllung (z.B. an Versanddienstleister) oder wenn eine gesetzliche Verpflichtung besteht.",
       "5. Cookies\nUnsere Website verwendet technisch notwendige Cookies. Analyse-Cookies werden nur mit deiner Einwilligung gesetzt.",
-      "6. Deine Rechte\nDu hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner Daten gemäß DSGVO. Kontaktiere uns unter support@rosaplushies.com.",
+      "6. Deine Rechte\nDu hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner Daten gemäß DSGVO. Kontaktiere uns unter support@liovero.shop.",
       "7. Aufbewahrung\nPersonenbezogene Daten werden nur so lange gespeichert, wie es für die Erfüllung des Verarbeitungszwecks erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen."
     ],
   },
