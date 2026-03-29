@@ -75,8 +75,8 @@ const ProductInfo = () => {
         <div className="flex-1">
           <h3 className="font-bold text-foreground">Angstfrei einschlafen war noch nie so einfach...</h3>
           <p className="text-sm text-muted-foreground mt-1">
-            Unsere gewichteten Kuscheltiere sind perfekt für Schlaf und Entspannung. Sie bieten eine sanfte, 
-            beruhigende Umarmung — funktioniert wie eine Gewichtsdecke, nur kuscheliger.
+            Unsere gewichteten Kuscheltiere sind perfekt für Schlaf und Entspannung. Sie bieten eine sanfte, beruhigende
+            Umarmung — funktioniert wie eine Gewichtsdecke, nur kuscheliger.
           </p>
         </div>
         <span className="bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full whitespace-nowrap">
@@ -108,7 +108,9 @@ const ProductInfo = () => {
         <Button
           size="lg"
           className="flex-1 gap-2 text-base sm:text-lg font-bold w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground"
-          onClick={() => window.location.href = `https://checkout.gamora.shop/checkout?productName=Gewichtetes+Kuh-Kuscheltier&productImage=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0900%2F0851%2F8951%2Ffiles%2Fc25b4fcbb9e68ef5dba7c105bef170d80526d4b8.webp%3Fv%3D1764135143&productPrice=9.99&comparePrice=34.99&qty=${qty}`}
+          onClick={() =>
+            (window.location.href = `https://checkout.liovero.shop/checkout?productName=Gewichtetes+Kuh-Kuscheltier&productImage=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0900%2F0851%2F8951%2Ffiles%2Fc25b4fcbb9e68ef5dba7c105bef170d80526d4b8.webp%3Fv%3D1764135143&productPrice=9.99&comparePrice=34.99`)
+          }
         >
           <Heart className="w-5 h-5" />
           In den Warenkorb
@@ -117,7 +119,8 @@ const ProductInfo = () => {
 
       {qty > 1 && (
         <p className="text-sm text-muted-foreground">
-          {qty} × €{UNIT_PRICE.toFixed(2).replace(".", ",")} = <strong className="text-foreground">€{total.replace(".", ",")}</strong>
+          {qty} × €{UNIT_PRICE.toFixed(2).replace(".", ",")} ={" "}
+          <strong className="text-foreground">€{total.replace(".", ",")}</strong>
           <span className="text-primary ml-2">(Du sparst €{savings.replace(".", ",")}!)</span>
         </p>
       )}
